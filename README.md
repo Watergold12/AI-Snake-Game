@@ -21,15 +21,19 @@ AI-Snake-Game/
 ├── src/
 │   ├── main.py           # Entry point for the game
 │   ├── grid.py           # Grid management and boundaries
+│   ├── game.py           # Looks over the overall game
+│   ├── pathfinding.py    # The AI logic (Finds shortest path)
+│   ├── renderer.py       # Takes care of all the entities
 │   ├── snake.py          # Snake logic (movement, growth, collision)
 │   ├── food.py           # Food generation and placement
-│   ├── ai.py             # AI logic using heaps (shortest path)
 │   └── utils.py          # Helper functions
 ├── tests/
 │   ├── test_grid.py
+│   ├── test_pathfinding.py
+│   ├── conftest.py
 │   └── test_snake.py
 ├── demo/
-│   └── test_render.py
+│   └── run_demo.sh
 └── requirements.txt
 ```
 
@@ -83,7 +87,8 @@ pytest tests/
 ---
 
 ## 📸 Preview
-*(Add a screenshot or GIF of your game here once you capture it!)*
+<img width="749" height="788" alt="image" src="https://github.com/user-attachments/assets/7d6ace69-4a35-449e-b21f-c6621b540bd3" />
+
 
 ---
 
