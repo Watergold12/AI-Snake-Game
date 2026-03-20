@@ -29,7 +29,6 @@ AI-Snake-Game/
 │   └── utils.py          # Helper functions
 ├── tests/
 │   ├── test_grid.py
-│   ├── test_pathfinding.py
 │   ├── conftest.py
 │   └── test_snake.py
 ├── demo/
