@@ -23,7 +23,7 @@ class Game:
         self.ai_enabled = False
         self.current_direction = (0, -1)  # initial dir: left
         self.path = []
-        # spawn food
+        # food spawned after snake initialized to avoid conflict
         self.spawn_food()
 
     def spawn_food(self):
@@ -31,10 +31,10 @@ class Game:
         self.food = place_food(self.rows, self.cols, blocked=blocked, rng=self.rng)
 
     def step_manual(self, next_dir: Tuple[int, int]):
-        """Advance one tick using manual direction (tuple dr,dc)."""
+        # Advance one tick using manual direction.
         if self.game_over:
             return
-        # prevent reversing: new dir cannot be opposite of current if snake length > 1
+        # prevent reversing: new dir cannot be opposite of current as snake length is already 3 from the start
         if len(self.snake) > 1:
             cur = self.current_direction
             if (next_dir[0] == -cur[0] and next_dir[1] == -cur[1]):
@@ -48,7 +48,7 @@ class Game:
         if not (0 <= nr < self.rows and 0 <= nc < self.cols):
             self.game_over = True
             return
-        # special-case: tail cell is considered free if we're not growing (will vacate)
+        
         tail = self.snake.tail()
         blocked = set(self.snake.get_body_list())
         will_grow = (next_cell == self.food)
@@ -67,7 +67,7 @@ class Game:
                 self.game_over = True
 
     def step_ai(self):
-        """Compute path to food with A* and step along it. If no path, try simple safe move."""
+        # Compute path to food with A* and step along it. If no path, try simple safe move.
         if self.game_over:
             return
         start = self.snake.head()

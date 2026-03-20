@@ -1,4 +1,3 @@
-# src/renderer.py
 import pygame
 from typing import Tuple, List
 from .grid import Coord

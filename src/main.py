@@ -28,13 +28,13 @@ def main():
     # timing for fixed ticks
     clock = renderer.clock
     tick_interval_ms = 1000 // TICKS_PER_SEC
-    acc = 0  # accumulator milliseconds
+    acc = 0
 
     running = True
     last_input_dir: Tuple[int, int] = game.current_direction
 
     while running:
-        dt = clock.tick(FPS)  # ms since last frame, also caps FPS
+        dt = clock.tick(FPS)
         acc += dt
 
         for event in pygame.event.get():

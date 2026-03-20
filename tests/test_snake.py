@@ -1,4 +1,3 @@
-# tests/test_snake.py
 from src.snake import Snake
 
 def test_move_and_grow_and_contains():

@@ -1,4 +1,3 @@
-# src/pathfinding.py
 import heapq
 from typing import Tuple, List, Dict, Optional, Set
 from .grid import neighbors, Coord

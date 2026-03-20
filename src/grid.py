@@ -1,4 +1,3 @@
-# src/grid.py
 from typing import Tuple, Generator, Optional, Set, List
 import random
 
