@@ -1,4 +1,5 @@
 import pygame
+import pygame.font
 from typing import Tuple, List
 from .grid import Coord
 from .snake import Snake
@@ -15,6 +16,7 @@ OVERLAY_COLOR = (0, 0, 0, 160)
 class Renderer:
     def __init__(self, rows: int, cols: int, width: int = 600, height: int = 600, show_grid: bool = False):
         pygame.init()
+        pygame.font.init()
         self.rows = rows
         self.cols = cols
         self.width = width

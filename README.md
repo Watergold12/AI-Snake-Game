@@ -79,7 +79,7 @@ pytest tests/
 
 ## 🧰 Tech Stack
 - **Language:** Python
-- **Graphics:** pygame
+- **Graphics:** pygame-ce (imported as `pygame`)
 - **Core DSA:** Heaps, Queues, BFS
 - **Design:** Object-Oriented Programming
 
