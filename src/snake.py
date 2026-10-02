@@ -26,12 +26,14 @@ class Snake:
         return coord in self.body_set
 
     def move(self, next_coord: Coord, grow: bool = False):
-        # add head
-        self.body.appendleft(next_coord)
-        self.body_set.add(next_coord)
         if not grow:
             old_tail = self.body.pop()
             self.body_set.remove(old_tail)
+        
+        # add head
+        self.body.appendleft(next_coord)
+        self.body_set.add(next_coord)
+        
         self._debug_assert_sync()
 
     def get_body_list(self) -> List[Coord]:
